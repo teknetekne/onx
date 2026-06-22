@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const observer = new IntersectionObserver(entries => {
         const current = entries.find(entry => entry.isIntersecting);
         if (!current) return;
+        history.replaceState(null, '', `#${current.target.id}`);
         navLinks.forEach(link => {
             const isActive = link.hash === `#${current.target.id}`;
             link.classList.toggle('active', isActive);
