@@ -57,6 +57,28 @@ document.addEventListener('DOMContentLoaded', async () => {
                     dropdown.classList.toggle('is-active');
                 });
             }
+
+            const translatedSectionIds = {
+                yaklasim: 'approach', approach: 'yaklasim',
+                odak: 'focus', focus: 'odak',
+                asamalar: 'phases', phases: 'asamalar',
+                stratejik: 'strategic', strategic: 'stratejik',
+                iletisim: 'contact', contact: 'iletisim'
+            };
+            dropdown.querySelectorAll('.lang-dropdown-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const viewportCenter = window.innerHeight / 2;
+                    const section = [...document.querySelectorAll('.site-wrapper [id]')].reverse()
+                        .find(section => {
+                            const bounds = section.getBoundingClientRect();
+                            return bounds.top <= viewportCenter && bounds.bottom > viewportCenter;
+                        });
+                    if (!section?.id) return;
+
+                    const sectionId = translatedSectionIds[section.id] ?? section.id;
+                    link.hash = sectionId;
+                });
+            });
         });
 
         document.addEventListener('click', (e) => {
