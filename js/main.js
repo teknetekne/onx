@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const parser = new DOMParser();
             pages.forEach(html => {
                 parser.parseFromString(html, 'text/html')
-                    .querySelectorAll('main > section')
+                    .querySelectorAll('main > section:not(#iletisim):not(#contact)')
                     .forEach(section => sections.append(document.importNode(section, true)));
             });
             pageSections.replaceWith(sections);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
-        const navLinks = header.querySelectorAll('.main-nav a, .btn-contact-mobile');
+        const navLinks = header.querySelectorAll('.main-nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 header.classList.remove('menu-open');
@@ -61,8 +61,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             const translatedSectionIds = {
                 yaklasim: 'approach', approach: 'yaklasim',
                 odak: 'focus', focus: 'odak',
-                asamalar: 'phases', phases: 'asamalar',
-                stratejik: 'strategic', strategic: 'stratejik',
                 iletisim: 'contact', contact: 'iletisim'
             };
             dropdown.querySelectorAll('.lang-dropdown-menu a').forEach(link => {

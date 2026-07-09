@@ -2,73 +2,26 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-
-    <!-- SEO & GEO Optimization Metadata -->
-    <title>ONx Fund | ONx Ventures</title>
-    <meta
-      name="description"
-      content="ONx Fund, Burgan Bank ekosisteminin gücüyle erken aşama fintech ve insurtech girişimlerine yatırım yapar."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>ONx Fonu | ONx Ventures</title>
+    <meta name="description" content="ONx fonu finansal teknolojiler başta olmak üzere dijital dönüşümü hızlandıran erken aşama girişimlere yatırım yaparak bankanın vizyonunu geleceğe taşır." />
     <link rel="canonical" href="https://onx.ventures/fund.html" />
     <link rel="alternate" hreflang="tr" href="https://onx.ventures/fund.html" />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://onx.ventures/en-fund.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://onx.ventures/fund.html"
-    />
-
-    <!-- Open Graph & Social Cards -->
-    <meta property="og:title" content="ONx Fund | ONx Ventures" />
-    <meta
-      property="og:description"
-      content="Burgan Bank ekosisteminin gücüyle erken aşama fintech ve insurtech girişimlerine yatırım yapıyoruz."
-    />
+    <link rel="alternate" hreflang="en" href="https://onx.ventures/en-fund.html" />
+    <link rel="alternate" hreflang="x-default" href="https://onx.ventures/fund.html" />
+    <meta property="og:title" content="ONx Fonu | ONx Ventures" />
+    <meta property="og:description" content="ONx fonu finansal teknolojiler başta olmak üzere dijital dönüşümü hızlandıran erken aşama girişimlere yatırım yaparak bankanın vizyonunu geleceğe taşır." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://onx.ventures/fund.html" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Premium Fonts: Cabinet Grotesk for display, Satoshi for body -->
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&f[]=satoshi@400,500,600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Structured Data: Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "InvestmentFund",
-        "name": "ONx Ventures",
-        "description": "Finansal hizmetler ve sigortacılık teknolojilerine odaklanan girişim sermayesi yatırım fonu.",
-        "url": "https://onx.ventures/",
-        "logo": "https://onx.ventures/images/logo2.svg",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "İstanbul",
-          "addressCountry": "TR"
-        },
-        "parentOrganization": {
-          "@type": "Organization",
-          "name": "Burgan Bank"
-        }
-      }
-    </script>
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&f[]=satoshi@400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css?v=6" />
   </head>
   <body>
     <div class="noise-overlay" aria-hidden="true"></div>
 
     <div class="site-wrapper">
-      <header class="site-header">
+      <header id="top" class="site-header">
         <a href="index.html" class="logo" aria-label="ONx Ventures Anasayfa">
           <img src="images/logo2.svg" alt="ONx Ventures" class="logo-img" />
         </a>
@@ -76,11 +29,11 @@
         <div class="header-center">
           <nav class="main-nav" aria-label="Ana Menü">
             <div class="nav-item"><a href="index.html" class="nav-title">Hakkında</a></div>
-            <div class="nav-item"><a href="fund.html" class="active nav-title">ONx Fund</a><a href="#yaklasim" class="nav-subtitle">yatırım yaklaşımımız</a><a href="#odak" class="nav-subtitle">odak alanları</a></div>
+            <div class="nav-item"><a href="fund.html" class="active nav-title" aria-current="page">ONx Fonu</a><a href="fund.html#yaklasim" class="nav-subtitle">yatırım yaklaşımımız</a><a href="fund.html#odak" class="nav-subtitle">odak alanları</a></div>
             <div class="nav-item"><a href="network.html" class="nav-title">Network</a></div>
-            <div class="nav-item"><a href="innova.html" class="nav-title">InnovaClub</a><a href="innova.html#asamalar" class="nav-subtitle">InnovaClub aşamaları</a><a href="innova.html#stratejik" class="nav-subtitle">stratejik rolü</a></div>
-            <div class="nav-item"><a href="team.html" class="nav-title">Komite & Takım</a></div>
-            <div class="nav-item"><a href="#iletisim" class="nav-title">İletişim</a></div>
+            <div class="nav-item"><a href="innova.html" class="nav-title">InnovaClub</a></div>
+            <div class="nav-item"><a href="team.html" class="nav-title">Komite &amp; Takım</a></div>
+            <div class="nav-item"><a href="index.html#iletisim" class="nav-title">İletişim</a></div>
           </nav>
         </div>
 
@@ -94,11 +47,7 @@
               <a href="en-fund.html">EN</a>
             </div>
           </div>
-          <button
-            class="menu-toggle"
-            aria-label="Menüyü Aç/Kapat"
-            aria-expanded="false"
-          >
+          <button class="menu-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -109,64 +58,34 @@
       <main>
         <section id="fund" class="section-divider section-padding">
           <div class="section-header">
-            <h2 class="section-title">ONx FUND</h2>
-            <span class="section-number">01</span>
+            <h2 class="section-title">ONx Fonu</h2>
+              <span class="section-number">01</span>
           </div>
-
           <div class="innova-content">
-            <p class="lead">
-              Dijital dönüşümü hızlandıran erken aşama girişimlere yatırım
-              yapıyor, yenilikçi çözümleri Burgan Bank ekosisteminin gücüyle
-              buluşturuyoruz.
-            </p>
+            <p class="lead">ONx fonu finansal teknolojiler başta olmak üzere dijital dönüşümü hızlandıran erken aşama girişimlere yatırım yaparak bankanın vizyonunu geleceğe taşır.</p>
           </div>
-
           <div class="approach-container" id="yaklasim">
             <h3 class="section-subtitle">Yatırım Yaklaşımımız:</h3>
-
-            <div
-              style="
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-                margin-top: 3rem;
-              "
-            >
-              <!-- Approach 1 -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
               <div class="focus-card">
                 <i data-lucide="rocket"></i>
                 <div class="focus-card-content">
-                  <h4>Erken Aşama Yatırımları</h4>
-                  <p>
-                    Ürünü veya hizmeti geliştirme aşamasında olan girişimlere
-                    tohum (seed) yatırımları ve seri A seviyesinde yatırımlar
-                    yapıyoruz.
-                  </p>
+                  <h4>Tohum ve Seri A</h4>
+                  <p>Ürünü veya hizmeti geliştirme aşamasında olan girişimlere tohum (seed) yatırımları ve seri A seviyesinde yatırımlar</p>
                 </div>
               </div>
-
-              <!-- Approach 2 -->
               <div class="focus-card">
                 <i data-lucide="target"></i>
                 <div class="focus-card-content">
-                  <h4>Stratejik Odak</h4>
-                  <p>
-                    Seçim sürecimizde her girişim için stratejik uyum,
-                    ölçeklenebilirlik ve yenilik kriterlerini esas alıyoruz.
-                  </p>
+                  <h4>Stratejik uyum</h4>
+                  <p>Stratejik uyum, ölçeklenebilirlik ve yenilik odaklı seçim süreci</p>
                 </div>
               </div>
-
-              <!-- Approach 3 -->
               <div class="focus-card">
                 <i data-lucide="users"></i>
                 <div class="focus-card-content">
-                  <h4>Kurumsal Sinerji</h4>
-                  <p>
-                    Finansal getirinin ötesinde, banka ve girişimler arasında
-                    uzun vadeli iş birliği ve kurumsal sinerji yaratmayı
-                    hedefliyoruz.
-                  </p>
+                  <h4>Kurumsal sinerji</h4>
+                  <p>Finansal getirinin ötesinde, uzun vadeli iş birliği ve kurumsal sinerji hedefi</p>
                 </div>
               </div>
             </div>
@@ -175,182 +94,101 @@
 
         <section id="odak" class="section-divider section-padding">
           <div class="section-header">
-            <h2 class="section-title">ODAK ALANLARI</h2>
-            <span class="section-number">02</span>
+            <h2 class="section-title">Odak Alanları</h2>
+              <span class="section-number">02</span>
           </div>
-
           <div class="focus-grid">
-            <!-- Fintech Section -->
             <div class="focus-col">
               <h3 class="focus-heading">Fintech</h3>
-              <p class="focus-lead">
-                ONx Ventures olarak finansal hizmetlerin dijital dönüşümünü
-                amaçlayan, yenilikçi FinTech çözümlerine odaklanıyoruz. Öne
-                çıkan alt alanlarımız şunlardır:
-              </p>
-
+              <p class="focus-lead">ONx Ventures olarak finansal hizmetlerin dijital dönüşümünü amaçlayan, yenilikçi Fintech çözümlerine odaklanıyoruz. Yatırım ve iş birliği açısından odaklandığımız alt alanlar şunlardır:</p>
               <div class="focus-cards-grid">
-                <!-- Fintech Sub 1 -->
-                <div class="focus-card">
-                  <i data-lucide="wallet"></i>
-                  <div class="focus-card-content">
-                    <h4>Dijital Ödeme Sistemleri & Wallet’lar</h4>
-                    <p>
-                      Mobil ödeme, e-cüzdan, anlık para transferi, QR / temassız
-                      ödeme çözümleri gibi, kullanıcı deneyimini kolaylaştıran
-                      teknolojiler.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Fintech Sub 2 -->
-                <div class="focus-card">
-                  <i data-lucide="coins"></i>
-                  <div class="focus-card-content">
-                    <h4>Lending Tech & Kredi Teknolojileri</h4>
-                    <p>
-                      Bireysel ya da KOBİ kredilerinde, dijital değerlendirme,
-                      kredi puanlama, alternatif veri kullanımı, mikro-kredi
-                      çözümleri gibi modern kredi modelleri.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Fintech Sub 3 -->
-                <div class="focus-card">
-                  <i data-lucide="cpu"></i>
-                  <div class="focus-card-content">
-                    <h4>Robo-Advisory & Dijital Varlık Yönetimi</h4>
-                    <p>
-                      Yapay zeka / algoritmik destek ile yatırım tavsiyesi,
-                      portföy yönetimi, kişiye özel finansal planlama, dijital
-                      yatırım platformları.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Fintech Sub 4 -->
-                <div class="focus-card">
-                  <i data-lucide="share-2"></i>
-                  <div class="focus-card-content">
-                    <h4>Open Banking & API-Tabanlı Bankacılık</h4>
-                    <p>
-                      Açık bankacılık çözümleri, API aracılığıyla bankacılık ve
-                      finansal servis entegrasyonu, veri taşınabilirliği ve
-                      finansal ekosistem iş birlikleri.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Fintech Sub 5 -->
-                <div class="focus-card">
-                  <i data-lucide="smile"></i>
-                  <div class="focus-card-content">
-                    <h4>
-                      Kullanıcı Odaklı Finansal Hizmetler & UX-Odaklı Dijital
-                      Bankacılık
-                    </h4>
-                    <p>
-                      Müşteri deneyimi, arayüz / kullanıcı deneyimi (UX),
-                      kişiselleştirilmiş finansal ürünler, erişilebilirlik ve
-                      konfor odaklı finansal servisler.
-                    </p>
-                  </div>
+              <div class="focus-card">
+                <i data-lucide="wallet"></i>
+                <div class="focus-card-content">
+                  <h4>Dijital Ödeme Sistemleri &amp; Wallet’lar</h4>
+                  <p>Mobil ödeme, e-cüzdan, anlık para transferi, QR / temassız ödeme çözümleri gibi, kullanıcı deneyimini kolaylaştıran teknolojiler.</p>
                 </div>
               </div>
+              <div class="focus-card">
+                <i data-lucide="coins"></i>
+                <div class="focus-card-content">
+                  <h4>Lending Tech &amp; Kredi Teknolojileri</h4>
+                  <p>Bireysel ya da KOBİ kredilerinde, dijital değerlendirme, kredi puanlama, alternatif veri kullanımı, mikro-kredi çözümleri gibi modern kredi modelleri.</p>
+                </div>
+              </div>
+              <div class="focus-card">
+                <i data-lucide="cpu"></i>
+                <div class="focus-card-content">
+                  <h4>Robo-Advisory &amp; Dijital Varlık Yönetimi</h4>
+                  <p>Yapay zekâ / algoritmik destek ile yatırım tavsiyesi, portföy yönetimi, kişiye özel finansal planlama, dijital yatırım platformları.</p>
+                </div>
+              </div>
+              <div class="focus-card">
+                <i data-lucide="share-2"></i>
+                <div class="focus-card-content">
+                  <h4>Open Banking &amp; API-Tabanlı Bankacılık</h4>
+                  <p>Açık bankacılık çözümleri, API aracılığıyla bankacılık ve finansal servis entegrasyonu, veri taşınabilirliği ve finansal ekosistem iş birlikleri.</p>
+                </div>
+              </div>
+              <div class="focus-card">
+                <i data-lucide="smile"></i>
+                <div class="focus-card-content">
+                  <h4>Kullanıcı Odaklı Finansal Hizmetler &amp; UX-Odaklı Dijital Bankacılık</h4>
+                  <p>Müşteri deneyimi, arayüz / kullanıcı deneyimi (UX), kişiselleştirilmiş finansal ürünler, erişilebilirlik ve konfor odaklı finansal servisler.</p>
+                </div>
+              </div>
+              </div>
             </div>
-
-            <!-- Insurtech Section -->
             <div class="focus-col">
               <h3 class="focus-heading">Insurtech</h3>
-              <p class="focus-lead">
-                Sigortacılık sektörünü dijitalleştiren, yenilikçi ve teknoloji
-                odaklı çözümler üreten girişimlere yatırım yapıyoruz.
-                Hedeflediğimiz alt segmentler:
-              </p>
-
+              <p class="focus-lead">Sigortacılık sektörünü dijitalleştiren, yenilikçi ve teknoloji odaklı çözümler üreten girişimlere odaklanıyoruz. İş birliği fırsatları ve yatırım için hedeflediğimiz alt alanlar şunlardır:</p>
               <div class="focus-cards-grid">
-                <!-- Insurtech Sub 1 -->
-                <div class="focus-card">
-                  <i data-lucide="laptop"></i>
-                  <div class="focus-card-content">
-                    <h4>
-                      Dijital Sigorta Platformları ve Sigorta Dağıtım
-                      Teknolojileri
-                    </h4>
-                    <p>
-                      Geleneksel sigorta satış & dağıtım kanallarını
-                      dijitalleştirerek müşteri deneyimini iyileştiren ve
-                      erişimi kolaylaştıran online sigorta platformları.
-                    </p>
-                  </div>
+              <div class="focus-card">
+                <i data-lucide="laptop"></i>
+                <div class="focus-card-content">
+                  <h4>Dijital Sigorta Platformları ve Sigorta Dağıtım Teknolojileri</h4>
+                  <p>Geleneksel sigorta satış &amp; dağıtım kanallarını dijitalleştirerek müşteri deneyimini iyileştiren ve erişimi kolaylaştıran online sigorta platformları.</p>
                 </div>
-
-                <!-- Insurtech Sub 2 -->
-                <div class="focus-card">
-                  <i data-lucide="shield-alert"></i>
-                  <div class="focus-card-content">
-                    <h4>Underwriting & Risk Değerlendirme Teknolojileri</h4>
-                    <p>
-                      Büyük veri, makine öğrenimi, yapay zeka ve dış veri
-                      kaynakları (örneğin IoT, çevresel veri, demografik veri)
-                      kullanarak daha isabetli risk analizi, fiyatlama ve
-                      underwriting süreçleri geliştiren çözümler. Bu, sigorta
-                      şirketlerinin risk yönetimini daha doğru ve ölçeklenebilir
-                      kılar.
-                    </p>
-                  </div>
+              </div>
+              <div class="focus-card">
+                <i data-lucide="shield-alert"></i>
+                <div class="focus-card-content">
+                  <h4>Underwriting &amp; Risk Değerlendirme Teknolojileri</h4>
+                  <p>Büyük veri, makine öğrenimi, yapay zekâ ve dış veri kaynakları (örneğin IoT, çevresel veri, demografik veri) kullanarak daha isabetli risk analizi, fiyatlama ve underwriting süreçleri geliştiren çözümler. Bu, sigorta şirketlerinin risk yönetimini daha doğru ve ölçeklenebilir kılar.</p>
                 </div>
-
-                <!-- Insurtech Sub 3 -->
-                <div class="focus-card">
-                  <i data-lucide="shuffle"></i>
-                  <div class="focus-card-content">
-                    <h4>Alternatif Sigorta Modelleri & Ürün Yenilikleri</h4>
-                    <p>
-                      Geleneksel sigorta modellerinin ötesine geçen, müşteri
-                      ihtiyaçlarına göre şekillenebilen, esnek ve yenilikçi
-                      sigorta çözümleri. Bu sayede sigorta erişimi genişler,
-                      yenilikçi risk/prodüksiyon modelleri ortaya çıkar.
-                    </p>
-                  </div>
+              </div>
+              <div class="focus-card">
+                <i data-lucide="shuffle"></i>
+                <div class="focus-card-content">
+                  <h4>Alternatif Sigorta Modelleri &amp; Ürün Yenilikleri</h4>
+                  <p>Geleneksel sigorta modellerinin ötesine geçen, müşteri ihtiyaçlarına göre şekillenebilen, esnek ve yenilikçi sigorta çözümleri. Bu sayede sigorta erişimi genişler, yenilikçi risk/prodüksiyon modelleri ortaya çıkar.</p>
                 </div>
-
-                <!-- Insurtech Sub 4 -->
-                <div class="focus-card">
-                  <i data-lucide="brain"></i>
-                  <div class="focus-card-content">
-                    <h4>
-                      Veri, Analitik & Yapay Zeka Tabanlı Sigorta Teknolojileri
-                    </h4>
-                    <p>
-                      Sigorta süreçlerinde veri analitiği, yapay zeka, makine
-                      öğrenimi ile müşteri segmentasyonu, risk modellemesi,
-                      fiyatlama, tahminleme ve operasyonel optimizasyon yapan
-                      çözümler. Özellikle büyük veri ve AI kullanımı, sigorta
-                      değer zincirinde dönüşüm ve rekabet avantajı sağlar.
-                    </p>
-                  </div>
+              </div>
+              <div class="focus-card">
+                <i data-lucide="brain"></i>
+                <div class="focus-card-content">
+                  <h4>Veri, Analitik &amp; Yapay Zekâ Tabanlı Sigorta Teknolojileri</h4>
+                  <p>Sigorta süreçlerinde veri analitiği, yapay zekâ, makine öğrenimi ile müşteri segmentasyonu, risk modellemesi, fiyatlama, tahminleme ve operasyonel optimizasyon yapan çözümler. Özellikle büyük veri ve AI kullanımı, sigorta değer zincirinde dönüşüm ve rekabet avantajı sağlar.</p>
                 </div>
+              </div>
               </div>
             </div>
           </div>
         </section>
-      </main>
-
-      <section id="iletisim" class="contact-cta section-divider">
-        <h3>Birlikte Büyüyelim</h3>
-        <p>
-          Finans ve sigortacılık teknolojilerinde ölçeklenebilir bir çözüm
-          geliştiriyorsanız, yatırım ve iş birliği fırsatlarını birlikte
-          değerlendirelim.
-        </p>
-        <div>
-          <a href="mailto:girisimcilikekositemi@on.com.tr" class="btn-primary"
-            >Ekibimizle Tanışın</a
-          >
+      
+      <section id="iletisim" class="section-divider section-padding">
+        <div class="section-header">
+          <h2 class="section-title">İletişim</h2>
+        </div>
+        <div class="innova-content">
+          <p class="lead" style="font-size: clamp(1.2rem, 2vw, 1.4rem); color: var(--text-muted); max-width: 800px; margin-bottom: 1rem;">Finans, teknoloji veya sigortacılık teknolojileri alanında yenilikçi çözümler mi geliştiriyorsunuz?</p>
+          <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">ONx Ventures ekibiyle tanışın ve Burgan Bank’ın güçlü ekosisteminin sunduğu iş birliği ve yatırım fırsatlarını keşfedin.</p>
+          <div>
+            <a href="mailto:girisimcilikekositemi@on.com.tr" class="btn-primary">ONx Ventures ekibiyle tanışın</a>
+          </div>
         </div>
       </section>
+      </main>
 
       <footer class="site-footer">
         <div class="footer-brand">
@@ -358,20 +196,17 @@
             <a href="index.html" class="logo">
               <img src="images/logo2.svg" alt="ONx Ventures" class="logo-img" />
             </a>
-            <p class="footer-brand-desc">
-              Finansal hizmetler ve sigortacılık teknolojilerinin sınırlarını
-              zorlayan yenilikçi girişimlere yatırım yapan Burgan Bank
-              ekosistemi.
-            </p>
+            <p class="footer-brand-desc">ONx Ventures, yatırım, iş birliği ve kurum içi inovasyonu aynı çatı altında toplayan yenilikçi girişim ekosistemidir.</p>
           </div>
         </div>
 
         <div class="footer-nav">
           <ul class="footer-nav-links">
             <li><div class="nav-item"><a href="index.html" class="nav-title">Hakkında</a></div></li>
+            <li><div class="nav-item"><a href="fund.html" class="nav-title">ONx Fonu</a></div></li>
             <li><div class="nav-item"><a href="network.html" class="nav-title">Network</a></div></li>
-            <li><div class="nav-item"><a href="innova.html" class="nav-title">InnovaClub</a><a href="innova.html#asamalar" class="nav-subtitle">InnovaClub aşamaları</a><a href="innova.html#stratejik" class="nav-subtitle">stratejik rolü</a></div></li>
-            <li><div class="nav-item"><a href="team.html" class="nav-title">Komite & Takım</a></div></li>
+            <li><div class="nav-item"><a href="innova.html" class="nav-title">InnovaClub</a></div></li>
+            <li><div class="nav-item"><a href="team.html" class="nav-title">Komite &amp; Takım</a></div></li>
           </ul>
         </div>
 
@@ -380,65 +215,30 @@
           <ul class="footer-contact-info">
             <li class="footer-contact-item">
               <i data-lucide="mail"></i>
-              <a href="mailto:girisimcilikekositemi@on.com.tr"
-                >girisimcilikekositemi@on.com.tr</a
-              >
+              <a href="mailto:girisimcilikekositemi@on.com.tr">girisimcilikekositemi@on.com.tr</a>
             </li>
             <li class="footer-contact-item">
               <i data-lucide="map-pin"></i>
-              <span
-                >Burgan Bank A.Ş. Maslak Mah. Eski Büyükdere Cad. No:13 PK:
-                34485 Sarıyer / İstanbul Türkiye</span
-              >
+              <span>Burgan Bank A.Ş. Maslak Mah. Eski Büyükdere Cad. No:13 PK: 34485 Sarıyer / İstanbul Türkiye</span>
             </li>
           </ul>
         </div>
 
         <div class="footer-building">
-          <a
-            href="https://www.on.com.tr/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/on-logo.svg"
-              alt="ON Logo"
-              class="footer-on-logo"
-            />
+          <a href="https://www.on.com.tr/" target="_blank" rel="noopener noreferrer">
+            <img src="images/on-logo.svg" alt="ON Logo" class="footer-on-logo" />
           </a>
-          <a
-            href="https://www.burgan.com.tr/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/burgan-logo-footer.png"
-              alt="Burgan Bank"
-              class="footer-building-img"
-            />
+          <a href="https://www.burgan.com.tr/" target="_blank" rel="noopener noreferrer">
+            <img src="images/burgan-logo-footer.png" alt="Burgan Bank" class="footer-building-img" />
           </a>
         </div>
 
         <div class="footer-bottom">
-          <div class="copyright">
-            &copy; 2026 ONx Ventures. Tüm Hakları Saklıdır.
-          </div>
+          <div class="copyright">&copy; 2026 ONx Ventures. Tüm Hakları Saklıdır.</div>
           <div>
-            <a
-              href="#top"
-              class="btn-link"
-              style="color: var(--text-muted); font-size: 0.9rem"
-            >
+            <a href="#top" class="btn-link" style="color: var(--text-muted); font-size: 0.9rem">
               Yukarı Git
-              <i
-                data-lucide="arrow-up"
-                style="
-                  width: 14px;
-                  height: 14px;
-                  vertical-align: middle;
-                  margin-left: 4px;
-                "
-              ></i>
+              <i data-lucide="arrow-up" style="width: 14px; height: 14px; vertical-align: middle; margin-left: 4px"></i>
             </a>
           </div>
         </div>
@@ -446,6 +246,6 @@
     </div>
 
     <script src="https://unpkg.com/lucide@0.330.0"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260709"></script>
   </body>
 </html>
