@@ -4,6 +4,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     const header = document.querySelector('.site-header');
     const menuButton = document.querySelector('.menu-toggle');
 
+    document.querySelectorAll('.hero').forEach(hero => {
+        const content = hero.querySelector('.hero-content');
+        if (!content) return;
+
+        const setHeroContentHeight = () => {
+            const contentHeight = content.getBoundingClientRect().height;
+            hero.style.setProperty('--hero-content-height', `${contentHeight}px`);
+        };
+
+        setHeroContentHeight();
+        document.fonts?.ready.then(setHeroContentHeight);
+
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(setHeroContentHeight).observe(content);
+        } else {
+            window.addEventListener('resize', setHeroContentHeight, { passive: true });
+        }
+    });
+
     const pageSections = document.querySelector('#page-sections');
     if (pageSections) {
         try {
