@@ -22,6 +22,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&f[]=satoshi@400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=15" />
+    <link rel="stylesheet" href="css/contact-form.css?v=1" />
   </head>
   <body>
 
@@ -94,12 +95,78 @@
         <div class="section-header">
           <h2 class="section-title">Contact</h2>
         </div>
-        <div class="innova-content">
-          <p class="lead" style="font-size: clamp(1.2rem, 2vw, 1.4rem); color: var(--text-muted); max-width: 800px; margin-bottom: 1rem;">Are you developing innovative solutions in finance, technology, or insurance technologies?</p>
-          <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Meet the ONx Ventures team and discover the collaboration and investment opportunities offered by Burgan Bank’s strong ecosystem.</p>
-          <div>
-            <a href="mailto:girisimcilikekositemi@on.com.tr" class="btn-primary">Meet the ONx Ventures team</a>
+        <div class="contact-content">
+          <div class="contact-intro">
+            <p class="contact-kicker">Let’s grow together.</p>
+            <h3>Tell us about your venture and the partnership you are looking for.</h3>
+            <p>If you are building an innovative solution in finance, technology, or insurtech, meet our team.</p>
+            <a class="contact-email" href="mailto:girisimcilikekositemi@on.com.tr">
+              <i data-lucide="mail" aria-hidden="true"></i>
+              <span>girisimcilikekositemi@on.com.tr</span>
+            </a>
           </div>
+
+          <form
+            class="contact-form"
+            action="https://script.google.com/macros/s/AKfycbxaThwFNydL-hslFYuYgE4pTogD9-BFdy89pNluD-3LMQVJ9XwLsuRiYizGbM7e3c48JA/exec"
+            method="POST"
+            data-contact-form
+            data-sending-label="Sending…"
+            data-success-message="Thank you. Your message has reached our team; we’ll be in touch shortly."
+            data-error-message="Your message could not be sent. Please try again or contact us by email."
+            data-config-message="The form connection is not active yet. In the meantime, you can contact us by email."
+            aria-label="ONx Ventures contact form"
+            aria-describedby="contact-form-note contact-form-status"
+          >
+            <input type="hidden" name="language" value="en" />
+            <input type="hidden" name="source" value="onx.ventures" />
+            <div class="contact-form-trap" aria-hidden="true">
+              <label for="contact-website">Website</label>
+              <input id="contact-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="contact-form-grid">
+              <label class="contact-field" for="contact-name">
+                <span class="contact-field-label"><span aria-hidden="true">01</span> Full Name</span>
+                <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
+              </label>
+
+              <label class="contact-field" for="contact-email">
+                <span class="contact-field-label"><span aria-hidden="true">02</span> Email</span>
+                <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required />
+              </label>
+
+              <label class="contact-field" for="contact-company">
+                <span class="contact-field-label"><span aria-hidden="true">03</span> Venture / Company</span>
+                <input id="contact-company" name="company" type="text" autocomplete="organization" placeholder="Your venture’s name" />
+              </label>
+
+              <label class="contact-field" for="contact-interest">
+                <span class="contact-field-label"><span aria-hidden="true">04</span> Topic</span>
+                <select id="contact-interest" name="interest" required>
+                  <option value="" selected disabled>Select a topic</option>
+                  <option value="Investment">Investment</option>
+                  <option value="Strategic partnership">Strategic partnership</option>
+                  <option value="InnovaClub">InnovaClub</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+
+              <label class="contact-field contact-field--wide" for="contact-message">
+                <span class="contact-field-label"><span aria-hidden="true">05</span> Your Message</span>
+                <textarea id="contact-message" name="message" rows="4" placeholder="Briefly tell us what you are building and how you would like to work with ONx Ventures." required></textarea>
+              </label>
+            </div>
+
+            <div class="contact-form-actions">
+              <p id="contact-form-note">Your information will be shared so our team can get back to you.</p>
+              <button class="btn-primary contact-form-submit" type="submit" data-submit-button>
+                <span data-submit-label>Send message</span>
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </button>
+            </div>
+            <p id="contact-form-status" class="contact-form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+          </form>
         </div>
       </section>
       </main>
@@ -161,5 +228,6 @@
 
     <script src="https://unpkg.com/lucide@0.330.0"></script>
     <script src="js/main.js?v=2026071001"></script>
+    <script src="js/contact-form.js?v=2"></script>
   </body>
 </html>

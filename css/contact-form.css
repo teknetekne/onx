@@ -1,0 +1,262 @@
+/* Contact form: editorial layout aligned with the ONx visual system. */
+
+.contact-content {
+  min-width: 0;
+}
+
+.contact-intro {
+  max-width: 58rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.contact-kicker {
+  margin-bottom: 0.85rem;
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+html[lang="tr"] .contact-kicker {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.contact-intro h3 {
+  max-width: 18ch;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.contact-intro > p:not(.contact-kicker) {
+  max-width: 56ch;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.65;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  max-width: 100%;
+  margin-top: 1.75rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-email svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.contact-email span {
+  border-bottom: 1px solid var(--card-border);
+  transition: border-color 150ms ease-out;
+}
+
+.contact-email:hover span {
+  border-color: var(--accent);
+}
+
+.contact-form {
+  position: relative;
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.contact-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.5rem 0 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.contact-field--wide {
+  grid-column: 1 / -1;
+}
+
+.contact-field-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contact-field-label > span {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-main);
+  font: 500 clamp(1rem, 1.4vw, 1.15rem) / 1.5 var(--font-body);
+}
+
+.contact-field input,
+.contact-field select {
+  min-height: 2.5rem;
+}
+
+.contact-field textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+.contact-field select {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.contact-field:focus-within {
+  border-bottom-color: var(--accent);
+}
+
+.contact-field:focus-within .contact-field-label {
+  color: var(--accent);
+}
+
+.contact-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+
+.contact-form-actions p {
+  max-width: 42ch;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.contact-form-submit {
+  min-width: 10.5rem;
+  min-height: 3rem;
+  flex: 0 0 auto;
+}
+
+.contact-form-submit svg {
+  width: 17px;
+  height: 17px;
+}
+
+.contact-form-submit[aria-busy="true"] svg {
+  display: none;
+}
+
+.contact-form-submit[aria-busy="true"]::after {
+  content: '';
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid rgba(0, 0, 0, 0.28);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: contact-form-spin 700ms linear infinite;
+}
+
+.contact-form-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.contact-form-status {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.contact-form-status.is-success {
+  color: var(--accent);
+}
+
+.contact-form-status.is-error {
+  color: #ff9d8d;
+}
+
+.contact-form-trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes contact-form-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-intro {
+    margin-bottom: 1rem;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-field--wide {
+    grid-column: auto;
+  }
+
+  .contact-form-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-form-submit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form-submit[aria-busy="true"]::after {
+    animation: none;
+  }
+}
