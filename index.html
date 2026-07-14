@@ -22,7 +22,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&f[]=satoshi@400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=15" />
-    <link rel="stylesheet" href="css/contact-form.css?v=1" />
+    <link rel="stylesheet" href="css/contact-form.css?v=3" />
   </head>
   <body>
 
@@ -115,6 +115,8 @@
             data-success-message="Teşekkürler. Mesajınız ekibimize ulaştı. En kısa sürede size döneceğiz."
             data-error-message="Mesajınız gönderilemedi. Lütfen tekrar deneyin veya bize e-posta ile ulaşın."
             data-config-message="Form bağlantısı henüz etkin değil. Bu sırada bize e-posta ile ulaşabilirsiniz."
+            data-file-type-message="Pitch deck yalnızca PDF formatında olabilir."
+            data-file-size-message="Pitch deck en fazla 10 MB olabilir."
             aria-label="ONx Ventures iletişim formu"
             aria-describedby="contact-form-note contact-form-status"
           >
@@ -138,25 +140,50 @@
 
               <label class="contact-field" for="contact-company">
                 <span class="contact-field-label"><span aria-hidden="true">03</span> Girişim / Şirket</span>
-                <input id="contact-company" name="company" type="text" autocomplete="organization" placeholder="Girişiminizin adı" />
+                <input id="contact-company" name="company" type="text" autocomplete="organization" placeholder="Girişiminizin adı" required />
+              </label>
+
+              <label class="contact-field" for="contact-venture-website">
+                <span class="contact-field-label"><span aria-hidden="true">04</span> Website</span>
+                <input id="contact-venture-website" name="website" type="url" inputmode="url" autocomplete="url" placeholder="https://girisim.com" required />
               </label>
 
               <label class="contact-field" for="contact-interest">
-                <span class="contact-field-label"><span aria-hidden="true">04</span> Görüşme Konusu</span>
+                <span class="contact-field-label"><span aria-hidden="true">05</span> Görüşme Konusu</span>
                 <select id="contact-interest" name="interest" required>
                   <option value="" selected disabled>Bir konu seçin</option>
-                  <option value="Yatırım">Yatırım</option>
-                  <option value="Stratejik iş birliği">Stratejik iş birliği</option>
-                  <option value="InnovaClub">InnovaClub</option>
+                  <option value="Yatırım Görüşmesi">Yatırım Görüşmesi</option>
+                  <option value="İş Birliği Görüşmesi">İş Birliği Görüşmesi</option>
                   <option value="Diğer">Diğer</option>
                 </select>
               </label>
 
+              <label class="contact-field" for="contact-stage">
+                <span class="contact-field-label"><span aria-hidden="true">06</span> Girişim Aşaması</span>
+                <select id="contact-stage" name="stage" required>
+                  <option value="" selected disabled>Bir aşama seçin</option>
+                  <option value="MVP Öncesi">MVP Öncesi</option>
+                  <option value="MVP / Pilot">MVP / Pilot</option>
+                  <option value="Gelir Öncesi">Gelir Öncesi</option>
+                  <option value="Gelir Üreten">Gelir Üreten</option>
+                  <option value="Ölçeklenme Aşaması">Ölçeklenme Aşaması</option>
+                </select>
+              </label>
+
               <label class="contact-field contact-field--wide" for="contact-message">
-                <span class="contact-field-label"><span aria-hidden="true">05</span> Mesajınız</span>
+                <span class="contact-field-label"><span aria-hidden="true">07</span> Mesajınız</span>
                 <textarea id="contact-message" name="message" rows="4" placeholder="Ne geliştirdiğinizi ve ONx Ventures ile nasıl bir iş birliği düşündüğünüzü kısaca anlatın." required></textarea>
               </label>
+
+              <label class="contact-field contact-field--wide" for="contact-pitch-deck">
+                <span class="contact-field-label"><span aria-hidden="true">08</span> Pitch Deck <small>(isteğe bağlı)</small></span>
+                <input id="contact-pitch-deck" type="file" accept=".pdf,application/pdf" data-pitch-deck />
+                <span class="contact-field-hint">PDF · En fazla 10 MB</span>
+              </label>
             </div>
+
+            <input type="hidden" name="pitchDeckName" data-pitch-deck-name />
+            <input type="hidden" name="pitchDeckData" data-pitch-deck-data />
 
             <div class="contact-form-actions">
               <p id="contact-form-note">Bilgileriniz, ekibimizin size dönüş yapabilmesi için iletilir.</p>
@@ -228,6 +255,6 @@
 
     <script src="https://unpkg.com/lucide@0.330.0"></script>
     <script src="js/main.js?v=2026071001"></script>
-    <script src="js/contact-form.js?v=2"></script>
+    <script src="js/contact-form.js?v=4"></script>
   </body>
 </html>

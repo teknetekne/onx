@@ -74,6 +74,7 @@ html[lang="tr"] .contact-kicker {
 
 .contact-form {
   position: relative;
+  background: transparent;
 }
 
 .contact-form-grid {
@@ -111,6 +112,14 @@ html[lang="tr"] .contact-kicker {
   font-variant-numeric: tabular-nums;
 }
 
+.contact-field-label small {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 .contact-field input,
 .contact-field select,
 .contact-field textarea {
@@ -137,6 +146,35 @@ html[lang="tr"] .contact-kicker {
 .contact-field select {
   color-scheme: dark;
   cursor: pointer;
+}
+
+.contact-field input[type="file"] {
+  padding: 0.35rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.contact-field input[type="file"]::file-selector-button {
+  margin-right: 0.85rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--card-border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  font: 600 0.75rem / 1 var(--font-body);
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+
+.contact-field input[type="file"]::file-selector-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-field-hint {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
 }
 
 .contact-field input::placeholder,

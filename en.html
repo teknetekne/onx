@@ -22,7 +22,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900&f[]=satoshi@400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=15" />
-    <link rel="stylesheet" href="css/contact-form.css?v=1" />
+    <link rel="stylesheet" href="css/contact-form.css?v=3" />
   </head>
   <body>
 
@@ -115,6 +115,8 @@
             data-success-message="Thank you. Your message has reached our team; we’ll be in touch shortly."
             data-error-message="Your message could not be sent. Please try again or contact us by email."
             data-config-message="The form connection is not active yet. In the meantime, you can contact us by email."
+            data-file-type-message="The pitch deck must be a PDF file."
+            data-file-size-message="The pitch deck must be no larger than 10 MB."
             aria-label="ONx Ventures contact form"
             aria-describedby="contact-form-note contact-form-status"
           >
@@ -138,25 +140,50 @@
 
               <label class="contact-field" for="contact-company">
                 <span class="contact-field-label"><span aria-hidden="true">03</span> Venture / Company</span>
-                <input id="contact-company" name="company" type="text" autocomplete="organization" placeholder="Your venture’s name" />
+                <input id="contact-company" name="company" type="text" autocomplete="organization" placeholder="Your venture’s name" required />
+              </label>
+
+              <label class="contact-field" for="contact-venture-website">
+                <span class="contact-field-label"><span aria-hidden="true">04</span> Website</span>
+                <input id="contact-venture-website" name="website" type="url" inputmode="url" autocomplete="url" placeholder="https://startup.com" required />
               </label>
 
               <label class="contact-field" for="contact-interest">
-                <span class="contact-field-label"><span aria-hidden="true">04</span> Topic</span>
+                <span class="contact-field-label"><span aria-hidden="true">05</span> Topic</span>
                 <select id="contact-interest" name="interest" required>
                   <option value="" selected disabled>Select a topic</option>
-                  <option value="Investment">Investment</option>
-                  <option value="Strategic partnership">Strategic partnership</option>
-                  <option value="InnovaClub">InnovaClub</option>
+                  <option value="Investment Meeting">Investment Meeting</option>
+                  <option value="Partnership Meeting">Partnership Meeting</option>
                   <option value="Other">Other</option>
                 </select>
               </label>
 
+              <label class="contact-field" for="contact-stage">
+                <span class="contact-field-label"><span aria-hidden="true">06</span> Venture Stage</span>
+                <select id="contact-stage" name="stage" required>
+                  <option value="" selected disabled>Select a stage</option>
+                  <option value="Pre-MVP">Pre-MVP</option>
+                  <option value="MVP / Pilot">MVP / Pilot</option>
+                  <option value="Pre-Revenue">Pre-Revenue</option>
+                  <option value="Revenue-Generating">Revenue-Generating</option>
+                  <option value="Scaling">Scaling</option>
+                </select>
+              </label>
+
               <label class="contact-field contact-field--wide" for="contact-message">
-                <span class="contact-field-label"><span aria-hidden="true">05</span> Your Message</span>
+                <span class="contact-field-label"><span aria-hidden="true">07</span> Your Message</span>
                 <textarea id="contact-message" name="message" rows="4" placeholder="Briefly tell us what you are building and how you would like to work with ONx Ventures." required></textarea>
               </label>
+
+              <label class="contact-field contact-field--wide" for="contact-pitch-deck">
+                <span class="contact-field-label"><span aria-hidden="true">08</span> Pitch Deck <small>(optional)</small></span>
+                <input id="contact-pitch-deck" type="file" accept=".pdf,application/pdf" data-pitch-deck />
+                <span class="contact-field-hint">PDF · Maximum 10 MB</span>
+              </label>
             </div>
+
+            <input type="hidden" name="pitchDeckName" data-pitch-deck-name />
+            <input type="hidden" name="pitchDeckData" data-pitch-deck-data />
 
             <div class="contact-form-actions">
               <p id="contact-form-note">Your information will be shared so our team can get back to you.</p>
@@ -228,6 +255,6 @@
 
     <script src="https://unpkg.com/lucide@0.330.0"></script>
     <script src="js/main.js?v=2026071001"></script>
-    <script src="js/contact-form.js?v=2"></script>
+    <script src="js/contact-form.js?v=4"></script>
   </body>
 </html>
