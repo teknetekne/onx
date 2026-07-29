@@ -623,80 +623,143 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 3rem;
 }
 
-/* Focus Areas (Home) */
-.focus-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+/* Focus Areas (Home & Fund) - Minimalist Flat Tabs */
+.focus-tabs-nav {
+  display: flex;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2.5rem;
+  padding-bottom: 0;
 }
 
-.focus-heading {
+.focus-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 0 0 1rem 0;
+  margin-bottom: -1px;
+  color: var(--text-muted);
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  color: var(--text-main);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: var(--transition-smooth);
 }
 
-.focus-heading svg {
-  color: var(--accent);
-  width: 40px;
-  height: 40px;
+.focus-tab-btn:hover {
+  color: var(--text-main);
+  opacity: 0.85;
+}
+
+.focus-tab-btn.active {
+  color: var(--text-main);
+  border-bottom-color: var(--accent);
+  opacity: 1;
+  box-shadow: none;
+}
+
+.focus-tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.focus-tab-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.focus-tab-panel .focus-lead {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 65ch;
+}
+
+.focus-tabs-container .focus-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(2rem, 4vw, 4rem);
+  row-gap: 1.5rem;
+}
+
+/* Fintech 5th card spans full width for a deliberate, balanced layout */
+#focus-tab-fintech .focus-card:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .focus-tabs-container .focus-cards-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+  }
+
+  #focus-tab-fintech .focus-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+.focus-tabs-container .focus-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.75rem 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--card-border);
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.focus-tabs-container .focus-card:hover {
+  background: transparent;
+  border-top-color: var(--card-border-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+.focus-tabs-container .focus-card [data-lucide],
+.focus-tabs-container .focus-card svg {
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 2px;
+  color: var(--text-muted) !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
   flex-shrink: 0;
 }
 
-.focus-lead {
-  color: var(--text-muted);
-  margin-bottom: 3rem;
-  line-height: 1.6;
-  font-size: 1.1rem;
+.focus-tabs-container .focus-card:hover [data-lucide],
+.focus-tabs-container .focus-card:hover svg {
+  color: var(--accent) !important;
+  transform: scale(1.08) rotate(-2deg);
 }
 
-.focus-cards-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.focus-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  padding: 2.25rem;
-  border-radius: var(--radius-card);
-  transition: var(--transition-smooth);
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-
-.focus-card:hover {
-  background: var(--card-bg-hover);
-  border-color: var(--card-border-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 255, 51, 0.04);
-}
-
-.focus-card-content {
-  flex: 1;
-}
-
-.focus-card h4 {
+.focus-tabs-container .focus-card h4 {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: var(--text-main);
+  line-height: 1.35;
   letter-spacing: -0.01em;
 }
 
-.focus-card p {
+.focus-tabs-container .focus-card p {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* Network Page Opportunities */
@@ -1340,7 +1403,6 @@ main > .section-padding > :not(.section-header) {
   margin-bottom: 2rem;
 }
 
-.focus-cards-grid,
 .network-grid,
 .team-grid {
   gap: 0;
@@ -1383,9 +1445,9 @@ main > .section-padding > :not(.section-header) {
   max-width: 34ch;
 }
 
-.focus-card,
 .network-card,
-.team-card {
+.team-card,
+.approach-container .focus-card {
   gap: 0;
   padding: 1.75rem 0;
   background: transparent;
@@ -1397,9 +1459,9 @@ main > .section-padding > :not(.section-header) {
   -webkit-backdrop-filter: none;
 }
 
-.focus-card:hover,
 .network-card:hover,
-.team-card:hover {
+.team-card:hover,
+.approach-container .focus-card:hover {
   background: transparent;
   border-color: var(--card-border-hover);
   box-shadow: none;
@@ -1666,7 +1728,7 @@ main > .section-padding > .team-grid {
     gap: 0.75rem;
   }
 
-  .focus-card,
+  .approach-container .focus-card,
   .network-card,
   .team-card {
     padding: 1.5rem 0;

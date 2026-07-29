@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                     .forEach(section => sections.append(document.importNode(section, true)));
             });
             pageSections.replaceWith(sections);
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
             document.getElementById(location.hash.slice(1))?.scrollIntoView();
         } catch (error) {
             pageSections.innerHTML = `<p class="section-load-error">${document.documentElement.lang === 'en' ? 'Content could not be loaded. Please refresh the page.' : 'İçerik yüklenemedi. Lütfen sayfayı yenileyin.'}</p>`;
@@ -138,6 +141,33 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.body.classList.remove('scrolled');
         }
     }, { passive: true });
+
+    // Focus Areas Tabs Handler
+    document.addEventListener('click', (e) => {
+        const tabBtn = e.target.closest('.focus-tab-btn');
+        if (!tabBtn) return;
+
+        const targetTab = tabBtn.dataset.tab;
+        const navContainer = tabBtn.closest('.focus-tabs-nav');
+        const sectionContainer = tabBtn.closest('#odak, #focus') || document;
+
+        if (navContainer) {
+            navContainer.querySelectorAll('.focus-tab-btn').forEach(btn => {
+                const isActive = btn === tabBtn;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', String(isActive));
+            });
+        }
+
+        sectionContainer.querySelectorAll('.focus-tab-panel').forEach(panel => {
+            const isTarget = panel.dataset.focusPanel === targetTab;
+            panel.classList.toggle('active', isTarget);
+        });
+
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
 
     // Initialize Lucide Icons
     if (typeof lucide !== 'undefined') {

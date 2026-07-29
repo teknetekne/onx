@@ -100,80 +100,91 @@
           <div class="section-header">
             <h2 class="section-title">Odak Alanları</h2>
           </div>
-          <div class="focus-grid">
-            <div class="focus-col">
-              <h3 class="focus-heading">Fintech</h3>
+
+          <div class="focus-tabs-container">
+            <div class="focus-tabs-nav" role="tablist" aria-label="Odak Alanları">
+              <button type="button" class="focus-tab-btn active" role="tab" aria-selected="true" aria-controls="focus-tab-fintech" id="tab-fintech" data-tab="fintech">
+                FINTECH
+              </button>
+              <button type="button" class="focus-tab-btn" role="tab" aria-selected="false" aria-controls="focus-tab-insurtech" id="tab-insurtech" data-tab="insurtech">
+                INSURTECH
+              </button>
+            </div>
+
+            <!-- Fintech Tab Panel -->
+            <div class="focus-tab-panel active" id="focus-tab-fintech" role="tabpanel" aria-labelledby="tab-fintech" data-focus-panel="fintech">
               <p class="focus-lead">ONx Ventures olarak finansal hizmetlerin dijital dönüşümünü amaçlayan, yenilikçi Fintech çözümlerine odaklanıyoruz. Yatırım ve iş birliği açısından odaklandığımız alt alanlar şunlardır:</p>
               <div class="focus-cards-grid">
-              <div class="focus-card">
-                <i data-lucide="wallet"></i>
-                <div class="focus-card-content">
-                  <h4>Dijital Ödeme Sistemleri &amp; Wallet’lar</h4>
-                  <p>Mobil ödeme, e-cüzdan, anlık para transferi, QR / temassız ödeme çözümleri gibi, kullanıcı deneyimini kolaylaştıran teknolojiler.</p>
+                <div class="focus-card">
+                  <i data-lucide="wallet"></i>
+                  <div class="focus-card-content">
+                    <h4>Dijital Ödeme Sistemleri &amp; Wallet’lar</h4>
+                    <p>Mobil ödeme, e-cüzdan, anlık para transferi, QR / temassız ödeme çözümleri gibi, kullanıcı deneyimini kolaylaştıran teknolojiler.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="coins"></i>
-                <div class="focus-card-content">
-                  <h4>Lending Tech &amp; Kredi Teknolojileri</h4>
-                  <p>Bireysel ya da KOBİ kredilerinde, dijital değerlendirme, kredi puanlama, alternatif veri kullanımı, mikro-kredi çözümleri gibi modern kredi modelleri.</p>
+                <div class="focus-card">
+                  <i data-lucide="coins"></i>
+                  <div class="focus-card-content">
+                    <h4>Lending Tech &amp; Kredi Teknolojileri</h4>
+                    <p>Bireysel ya da KOBİ kredilerinde, dijital değerlendirme, kredi puanlama, alternatif veri kullanımı, mikro-kredi çözümleri gibi modern kredi modelleri.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="cpu"></i>
-                <div class="focus-card-content">
-                  <h4>Robo-Advisory &amp; Dijital Varlık Yönetimi</h4>
-                  <p>Yapay zekâ / algoritmik destek ile yatırım tavsiyesi, portföy yönetimi, kişiye özel finansal planlama, dijital yatırım platformları.</p>
+                <div class="focus-card">
+                  <i data-lucide="cpu"></i>
+                  <div class="focus-card-content">
+                    <h4>Robo-Advisory &amp; Dijital Varlık Yönetimi</h4>
+                    <p>Yapay zekâ / algoritmik destek ile yatırım tavsiyesi, portföy yönetimi, kişiye özel finansal planlama, dijital yatırım platformları.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="share-2"></i>
-                <div class="focus-card-content">
-                  <h4>Open Banking &amp; API-Tabanlı Bankacılık</h4>
-                  <p>Açık bankacılık çözümleri, API aracılığıyla bankacılık ve finansal servis entegrasyonu, veri taşınabilirliği ve finansal ekosistem iş birlikleri.</p>
+                <div class="focus-card">
+                  <i data-lucide="share-2"></i>
+                  <div class="focus-card-content">
+                    <h4>Open Banking &amp; API-Tabanlı Bankacılık</h4>
+                    <p>Açık bankacılık çözümleri, API aracılığıyla bankacılık ve finansal servis entegrasyonu, veri taşınabilirliği ve finansal ekosistem iş birlikleri.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="smile"></i>
-                <div class="focus-card-content">
-                  <h4>Kullanıcı Odaklı Finansal Hizmetler &amp; UX-Odaklı Dijital Bankacılık</h4>
-                  <p>Müşteri deneyimi, arayüz / kullanıcı deneyimi (UX), kişiselleştirilmiş finansal ürünler, erişilebilirlik ve konfor odaklı finansal servisler.</p>
+                <div class="focus-card">
+                  <i data-lucide="smile"></i>
+                  <div class="focus-card-content">
+                    <h4>Kullanıcı Odaklı Finansal Hizmetler &amp; UX-Odaklı Dijital Bankacılık</h4>
+                    <p>Müşteri deneyimi, arayüz / kullanıcı deneyimi (UX), kişiselleştirilmiş finansal ürünler, erişilebilirlik ve konfor odaklı finansal servisler.</p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
-            <div class="focus-col">
-              <h3 class="focus-heading">Insurtech</h3>
+
+            <!-- Insurtech Tab Panel -->
+            <div class="focus-tab-panel" id="focus-tab-insurtech" role="tabpanel" aria-labelledby="tab-insurtech" data-focus-panel="insurtech">
               <p class="focus-lead">Sigortacılık sektörünü dijitalleştiren, yenilikçi ve teknoloji odaklı çözümler üreten girişimlere odaklanıyoruz. İş birliği fırsatları ve yatırım için hedeflediğimiz alt alanlar şunlardır:</p>
               <div class="focus-cards-grid">
-              <div class="focus-card">
-                <i data-lucide="laptop"></i>
-                <div class="focus-card-content">
-                  <h4>Dijital Sigorta Platformları ve Sigorta Dağıtım Teknolojileri</h4>
-                  <p>Geleneksel sigorta satış &amp; dağıtım kanallarını dijitalleştirerek müşteri deneyimini iyileştiren ve erişimi kolaylaştıran online sigorta platformları.</p>
+                <div class="focus-card">
+                  <i data-lucide="laptop"></i>
+                  <div class="focus-card-content">
+                    <h4>Dijital Sigorta Platformları ve Sigorta Dağıtım Teknolojileri</h4>
+                    <p>Geleneksel sigorta satış &amp; dağıtım kanallarını dijitalleştirerek müşteri deneyimini iyileştiren ve erişimi kolaylaştıran online sigorta platformları.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="shield-alert"></i>
-                <div class="focus-card-content">
-                  <h4>Underwriting &amp; Risk Değerlendirme Teknolojileri</h4>
-                  <p>Büyük veri, makine öğrenimi, yapay zekâ ve dış veri kaynakları (örneğin IoT, çevresel veri, demografik veri) kullanarak daha isabetli risk analizi, fiyatlama ve underwriting süreçleri geliştiren çözümler. Bu, sigorta şirketlerinin risk yönetimini daha doğru ve ölçeklenebilir kılar.</p>
+                <div class="focus-card">
+                  <i data-lucide="shield-alert"></i>
+                  <div class="focus-card-content">
+                    <h4>Underwriting &amp; Risk Değerlendirme Teknolojileri</h4>
+                    <p>Büyük veri, makine öğrenimi, yapay zekâ ve dış veri kaynakları (örneğin IoT, çevresel veri, demografik veri) kullanarak daha isabetli risk analizi, fiyatlama ve underwriting süreçleri geliştiren çözümler. Bu, sigorta şirketlerinin risk yönetimini daha doğru ve ölçeklenebilir kılar.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="shuffle"></i>
-                <div class="focus-card-content">
-                  <h4>Alternatif Sigorta Modelleri &amp; Ürün Yenilikleri</h4>
-                  <p>Geleneksel sigorta modellerinin ötesine geçen, müşteri ihtiyaçlarına göre şekillenebilen, esnek ve yenilikçi sigorta çözümleri. Bu sayede sigorta erişimi genişler, yenilikçi risk/prodüksiyon modelleri ortaya çıkar.</p>
+                <div class="focus-card">
+                  <i data-lucide="shuffle"></i>
+                  <div class="focus-card-content">
+                    <h4>Alternatif Sigorta Modelleri &amp; Ürün Yenilikleri</h4>
+                    <p>Geleneksel sigorta modellerinin ötesine geçen, müşteri ihtiyaçlarına göre şekillenebilen, esnek ve yenilikçi sigorta çözümleri. Bu sayede sigorta erişimi genişler, yenilikçi risk/prodüksiyon modelleri ortaya çıkar.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="brain"></i>
-                <div class="focus-card-content">
-                  <h4>Veri, Analitik &amp; Yapay Zekâ Tabanlı Sigorta Teknolojileri</h4>
-                  <p>Sigorta süreçlerinde veri analitiği, yapay zekâ, makine öğrenimi ile müşteri segmentasyonu, risk modellemesi, fiyatlama, tahminleme ve operasyonel optimizasyon yapan çözümler. Özellikle büyük veri ve AI kullanımı, sigorta değer zincirinde dönüşüm ve rekabet avantajı sağlar.</p>
+                <div class="focus-card">
+                  <i data-lucide="brain"></i>
+                  <div class="focus-card-content">
+                    <h4>Veri, Analitik &amp; Yapay Zekâ Tabanlı Sigorta Teknolojileri</h4>
+                    <p>Sigorta süreçlerinde veri analitiği, yapay zekâ, makine öğrenimi ile müşteri segmentasyonu, risk modellemesi, fiyatlama, tahminleme ve operasyonel optimizasyon yapan çözümler. Özellikle büyük veri ve AI kullanımı, sigorta değer zincirinde dönüşüm ve rekabet avantajı sağlar.</p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>

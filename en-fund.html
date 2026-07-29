@@ -100,80 +100,91 @@
           <div class="section-header">
             <h2 class="section-title">Focus Areas</h2>
           </div>
-          <div class="focus-grid">
-            <div class="focus-col">
-              <h3 class="focus-heading">Fintech</h3>
+
+          <div class="focus-tabs-container">
+            <div class="focus-tabs-nav" role="tablist" aria-label="Focus Areas">
+              <button type="button" class="focus-tab-btn active" role="tab" aria-selected="true" aria-controls="focus-tab-fintech" id="tab-fintech" data-tab="fintech">
+                FINTECH
+              </button>
+              <button type="button" class="focus-tab-btn" role="tab" aria-selected="false" aria-controls="focus-tab-insurtech" id="tab-insurtech" data-tab="insurtech">
+                INSURTECH
+              </button>
+            </div>
+
+            <!-- Fintech Tab Panel -->
+            <div class="focus-tab-panel active" id="focus-tab-fintech" role="tabpanel" aria-labelledby="tab-fintech" data-focus-panel="fintech">
               <p class="focus-lead">As ONx Ventures, we focus on innovative fintech solutions that aim to digitally transform financial services. The sub-areas we focus on for investment and collaboration are:</p>
               <div class="focus-cards-grid">
-              <div class="focus-card">
-                <i data-lucide="wallet"></i>
-                <div class="focus-card-content">
-                  <h4>Digital Payment Systems &amp; Wallets</h4>
-                  <p>Technologies that simplify the user experience, such as mobile payment, e-wallet, instant money transfer, QR / contactless payment solutions.</p>
+                <div class="focus-card">
+                  <i data-lucide="wallet"></i>
+                  <div class="focus-card-content">
+                    <h4>Digital Payment Systems &amp; Wallets</h4>
+                    <p>Technologies that simplify the user experience, such as mobile payment, e-wallet, instant money transfer, QR / contactless payment solutions.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="coins"></i>
-                <div class="focus-card-content">
-                  <h4>Lending Tech &amp; Credit Technologies</h4>
-                  <p>Modern credit models such as digital assessment, credit scoring, alternative data usage, and micro-credit solutions in individual or SME loans.</p>
+                <div class="focus-card">
+                  <i data-lucide="coins"></i>
+                  <div class="focus-card-content">
+                    <h4>Lending Tech &amp; Credit Technologies</h4>
+                    <p>Modern credit models such as digital assessment, credit scoring, alternative data usage, and micro-credit solutions in individual or SME loans.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="cpu"></i>
-                <div class="focus-card-content">
-                  <h4>Robo-Advisory &amp; Digital Asset Management</h4>
-                  <p>Investment advice, portfolio management, personalized financial planning, and digital investment platforms with artificial intelligence / algorithmic support.</p>
+                <div class="focus-card">
+                  <i data-lucide="cpu"></i>
+                  <div class="focus-card-content">
+                    <h4>Robo-Advisory &amp; Digital Asset Management</h4>
+                    <p>Investment advice, portfolio management, personalized financial planning, and digital investment platforms with artificial intelligence / algorithmic support.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="share-2"></i>
-                <div class="focus-card-content">
-                  <h4>Open Banking &amp; API-Based Banking</h4>
-                  <p>Open banking solutions, banking and financial service integration through APIs, data portability, and financial ecosystem collaborations.</p>
+                <div class="focus-card">
+                  <i data-lucide="share-2"></i>
+                  <div class="focus-card-content">
+                    <h4>Open Banking &amp; API-Based Banking</h4>
+                    <p>Open banking solutions, banking and financial service integration through APIs, data portability, and financial ecosystem collaborations.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="smile"></i>
-                <div class="focus-card-content">
-                  <h4>User-Centric Financial Services &amp; UX-Driven Digital Banking</h4>
-                  <p>Customer experience, interface / user experience (UX), personalized financial products, accessibility, and comfort-oriented financial services.</p>
+                <div class="focus-card">
+                  <i data-lucide="smile"></i>
+                  <div class="focus-card-content">
+                    <h4>User-Centric Financial Services &amp; UX-Driven Digital Banking</h4>
+                    <p>Customer experience, interface / user experience (UX), personalized financial products, accessibility, and comfort-oriented financial services.</p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
-            <div class="focus-col">
-              <h3 class="focus-heading">Insurtech</h3>
+
+            <!-- Insurtech Tab Panel -->
+            <div class="focus-tab-panel" id="focus-tab-insurtech" role="tabpanel" aria-labelledby="tab-insurtech" data-focus-panel="insurtech">
               <p class="focus-lead">We focus on startups that digitize the insurance sector and produce innovative, technology-oriented solutions. The sub-areas we target for collaboration opportunities and investment are:</p>
               <div class="focus-cards-grid">
-              <div class="focus-card">
-                <i data-lucide="laptop"></i>
-                <div class="focus-card-content">
-                  <h4>Digital Insurance Platforms and Insurance Distribution Technologies</h4>
-                  <p>Online insurance platforms that improve customer experience and make access easier by digitizing traditional insurance sales &amp; distribution channels.</p>
+                <div class="focus-card">
+                  <i data-lucide="laptop"></i>
+                  <div class="focus-card-content">
+                    <h4>Digital Insurance Platforms and Insurance Distribution Technologies</h4>
+                    <p>Online insurance platforms that improve customer experience and make access easier by digitizing traditional insurance sales &amp; distribution channels.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="shield-alert"></i>
-                <div class="focus-card-content">
-                  <h4>Underwriting &amp; Risk Assessment Technologies</h4>
-                  <p>Solutions that develop more accurate risk analysis, pricing, and underwriting processes by using big data, machine learning, artificial intelligence, and external data sources (for example IoT, environmental data, demographic data). This makes the risk management of insurance companies more accurate and scalable.</p>
+                <div class="focus-card">
+                  <i data-lucide="shield-alert"></i>
+                  <div class="focus-card-content">
+                    <h4>Underwriting &amp; Risk Assessment Technologies</h4>
+                    <p>Solutions that develop more accurate risk analysis, pricing, and underwriting processes by using big data, machine learning, artificial intelligence, and external data sources (for example IoT, environmental data, demographic data). This makes the risk management of insurance companies more accurate and scalable.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="shuffle"></i>
-                <div class="focus-card-content">
-                  <h4>Alternative Insurance Models &amp; Product Innovations</h4>
-                  <p>Flexible and innovative insurance solutions that go beyond traditional insurance models and can be shaped according to customer needs. This expands access to insurance and creates innovative risk/production models.</p>
+                <div class="focus-card">
+                  <i data-lucide="shuffle"></i>
+                  <div class="focus-card-content">
+                    <h4>Alternative Insurance Models &amp; Product Innovations</h4>
+                    <p>Flexible and innovative insurance solutions that go beyond traditional insurance models and can be shaped according to customer needs. This expands access to insurance and creates innovative risk/production models.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="focus-card">
-                <i data-lucide="brain"></i>
-                <div class="focus-card-content">
-                  <h4>Data, Analytics &amp; AI-Based Insurance Technologies</h4>
-                  <p>Solutions that perform customer segmentation, risk modeling, pricing, forecasting, and operational optimization in insurance processes with data analytics, artificial intelligence, and machine learning. In particular, the use of big data and AI provides transformation and competitive advantage in the insurance value chain.</p>
+                <div class="focus-card">
+                  <i data-lucide="brain"></i>
+                  <div class="focus-card-content">
+                    <h4>Data, Analytics &amp; AI-Based Insurance Technologies</h4>
+                    <p>Solutions that perform customer segmentation, risk modeling, pricing, forecasting, and operational optimization in insurance processes with data analytics, artificial intelligence, and machine learning. In particular, the use of big data and AI provides transformation and competitive advantage in the insurance value chain.</p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
