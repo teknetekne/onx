@@ -23,7 +23,37 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
+    // Focus Tab Helper
+    const applySavedFocusTab = () => {
+        try {
+            const savedTab = sessionStorage.getItem('onx_active_tab');
+            if (!savedTab) return;
+
+            const focusSections = document.querySelectorAll('#odak, #focus');
+            focusSections.forEach(sectionContainer => {
+                const navBtn = sectionContainer.querySelector(`.focus-tab-btn[data-tab="${savedTab}"]`);
+                if (navBtn) {
+                    sectionContainer.querySelectorAll('.focus-tab-btn').forEach(btn => {
+                        const isActive = btn === navBtn;
+                        btn.classList.toggle('active', isActive);
+                        btn.setAttribute('aria-selected', String(isActive));
+                    });
+                    sectionContainer.querySelectorAll('.focus-tab-panel').forEach(panel => {
+                        const isTarget = panel.dataset.focusPanel === savedTab;
+                        panel.classList.toggle('active', isTarget);
+                    });
+                }
+            });
+        } catch (e) {}
+    };
+
     const pageSections = document.querySelector('#page-sections');
+    const hasInitialHash = Boolean(location.hash && location.hash.length > 1);
+
+    if (pageSections && hasInitialHash) {
+        document.body.style.opacity = '0';
+    }
+
     if (pageSections) {
         try {
             const sections = document.createDocumentFragment();
@@ -43,14 +73,31 @@ document.addEventListener('DOMContentLoaded', async () => {
                     .forEach(section => sections.append(document.importNode(section, true)));
             });
             pageSections.replaceWith(sections);
+            
+            applySavedFocusTab();
+
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
-            document.getElementById(location.hash.slice(1))?.scrollIntoView();
+
+            if (hasInitialHash) {
+                const targetId = location.hash.slice(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+                }
+                requestAnimationFrame(() => {
+                    document.body.style.transition = 'opacity 0.2s ease-in-out';
+                    document.body.style.opacity = '1';
+                });
+            }
         } catch (error) {
             pageSections.innerHTML = `<p class="section-load-error">${document.documentElement.lang === 'en' ? 'Content could not be loaded. Please refresh the page.' : 'İçerik yüklenemedi. Lütfen sayfayı yenileyin.'}</p>`;
             console.error(error);
+            document.body.style.opacity = '1';
         }
+    } else {
+        applySavedFocusTab();
     }
 
     if (menuButton && header) {
@@ -83,15 +130,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             const translatedSectionIds = {
                 yaklasim: 'approach', approach: 'yaklasim',
                 odak: 'focus', focus: 'odak',
-                iletisim: 'contact', contact: 'iletisim'
+                iletisim: 'contact', contact: 'iletisim',
+                top: 'top', fund: 'fund', network: 'network',
+                innova: 'innova', komite: 'komite', ekip: 'ekip'
             };
             dropdown.querySelectorAll('.lang-dropdown-menu a').forEach(link => {
                 link.addEventListener('click', () => {
-                    const viewportCenter = window.innerHeight / 2;
-                    const section = [...document.querySelectorAll('.site-wrapper [id]')].reverse()
-                        .find(section => {
-                            const bounds = section.getBoundingClientRect();
-                            return bounds.top <= viewportCenter && bounds.bottom > viewportCenter;
+                    const validSectionIds = ['top', 'fund', 'yaklasim', 'approach', 'odak', 'focus', 'network', 'innova', 'komite', 'ekip', 'iletisim', 'contact'];
+                    const focusPoint = window.innerHeight * 0.35;
+                    const section = validSectionIds
+                        .map(id => document.getElementById(id))
+                        .filter(Boolean)
+                        .reverse()
+                        .find(sec => {
+                            const bounds = sec.getBoundingClientRect();
+                            return bounds.top <= focusPoint && bounds.bottom > 0;
                         });
                     if (!section?.id) return;
 
@@ -110,28 +163,93 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-
-    const navLinks = [...document.querySelectorAll('.main-nav a[href^="#"]')];
-    const sections = navLinks
-        .map(link => document.querySelector(link.getAttribute('href')))
-        .filter(Boolean);
-
-    const observer = new IntersectionObserver(entries => {
-        const current = entries.find(entry => entry.isIntersecting);
-        if (!current) return;
-        history.replaceState(null, '', `#${current.target.id}`);
-        navLinks.forEach(link => {
-            const isActive = link.hash === `#${current.target.id}`;
-            link.classList.toggle('active', isActive);
-            if (isActive) {
-                link.setAttribute('aria-current', 'page');
-            } else {
-                link.removeAttribute('aria-current');
+    // ScrollSpy & Section Scroll Calculations
+    function initScrollSpy() {
+        const navLinks = [...document.querySelectorAll('.main-nav a')];
+        const validSectionIds = ['top', 'fund', 'yaklasim', 'approach', 'odak', 'focus', 'network', 'innova', 'komite', 'ekip', 'iletisim', 'contact'];
+        
+        const getTargetSectionId = (link) => {
+            const href = link.getAttribute('href') || '';
+            if (href.includes('#')) {
+                return href.split('#')[1];
             }
-        });
-    }, { rootMargin: '-20% 0px -70%' });
+            const pageMap = {
+                'index.html': 'top', 'en.html': 'top',
+                'fund.html': 'fund', 'en-fund.html': 'fund',
+                'network.html': 'network', 'en-network.html': 'network',
+                'innova.html': 'innova', 'en-innova.html': 'innova',
+                'team.html': 'komite', 'en-team.html': 'komite'
+            };
+            const filename = href.split('/').pop();
+            return pageMap[filename] || null;
+        };
 
-    sections.forEach(section => observer.observe(section));
+        const getSections = () => validSectionIds
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+
+        const getActiveSectionId = () => {
+            const sections = getSections();
+            if (!sections.length) return null;
+
+            // Bottom of page check
+            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 30) {
+                return sections[sections.length - 1].id;
+            }
+
+            const focusPoint = window.innerHeight * 0.35;
+            let activeId = null;
+
+            for (const section of sections) {
+                const bounds = section.getBoundingClientRect();
+                if (bounds.top <= focusPoint && bounds.bottom > 0) {
+                    activeId = section.id;
+                }
+            }
+
+            return activeId || sections[0].id;
+        };
+
+        const updateActiveNav = () => {
+            const activeId = getActiveSectionId();
+            if (!activeId) return;
+
+            // Map sub-sections or aliases to main nav targets (e.g., ekip -> komite)
+            const targetId = activeId === 'ekip' ? 'komite' : activeId;
+
+            navLinks.forEach(link => {
+                const linkTarget = getTargetSectionId(link);
+                const isActive = linkTarget === targetId;
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+
+            if (history.replaceState && location.hash !== `#${activeId}` && activeId !== 'top') {
+                history.replaceState(null, '', `#${activeId}`);
+            } else if (activeId === 'top' && location.hash) {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        };
+
+        let tick = false;
+        window.addEventListener('scroll', () => {
+            if (!tick) {
+                requestAnimationFrame(() => {
+                    updateActiveNav();
+                    tick = false;
+                });
+                tick = true;
+            }
+        }, { passive: true });
+
+        updateActiveNav();
+    }
+
+    initScrollSpy();
 
     // Scroll state for logo animation
     window.addEventListener('scroll', () => {
@@ -148,6 +266,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!tabBtn) return;
 
         const targetTab = tabBtn.dataset.tab;
+        try {
+            sessionStorage.setItem('onx_active_tab', targetTab);
+        } catch(err) {}
+
         const navContainer = tabBtn.closest('.focus-tabs-nav');
         const sectionContainer = tabBtn.closest('#odak, #focus') || document;
 

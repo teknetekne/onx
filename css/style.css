@@ -2033,7 +2033,9 @@ main > .section-padding > .team-grid {
 
 }
 
-#page-sections > .section-padding {
+main > section,
+.section-padding,
+.approach-container {
   scroll-margin-top: 1rem;
 }
 
@@ -2064,7 +2066,9 @@ main > .section-padding > .team-grid {
     backdrop-filter: blur(18px);
   }
 
-  #page-sections > .section-padding {
+  main > section,
+  .section-padding,
+  .approach-container {
     scroll-margin-top: 4.5rem;
   }
 }
