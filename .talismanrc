@@ -1,0 +1,12 @@
+fileignoreconfig:
+- filename: en.html
+  checksum: 4c063e9b3e755c712faacdfcc8d7713b9e95f656944648628efea70412d57cfe
+- filename: index.html
+  checksum: 711e2ecf7dbf9f341c91a3b6859581a5ac3ebc348389c0ff1ff7307b77e95341
+- filename: images/yener-yazlali.webp
+  checksum: 42b582075d9891d229fba91e3ba775256f8359538ba6b99e968558b9fdb0b362
+- filename: js/contact-form.js
+  checksum: ecca41a14de2b5939ce93dad5f15fc647c5965d85d444740ecbb03b77e52b2fc
+- filename: js/main.js
+  checksum: c7c6528714ff17b6ba1591066607c5bd6b4a6674a2e87ef458979a1751e97b96
+version: ""
