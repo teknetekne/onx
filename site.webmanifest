@@ -1,5 +1,5 @@
 {
-  "name": "ONx Ventures",
+  "name": "ONx",
   "short_name": "ONx",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#312A25",
+  "background_color": "#312A25",
   "display": "standalone"
 }
