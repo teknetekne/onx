@@ -23,30 +23,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Focus Tab Helper
-    const applySavedFocusTab = () => {
-        try {
-            const savedTab = sessionStorage.getItem('onx_active_tab');
-            if (!savedTab) return;
-
-            const focusSections = document.querySelectorAll('#odak, #focus');
-            focusSections.forEach(sectionContainer => {
-                const navBtn = sectionContainer.querySelector(`.focus-tab-btn[data-tab="${savedTab}"]`);
-                if (navBtn) {
-                    sectionContainer.querySelectorAll('.focus-tab-btn').forEach(btn => {
-                        const isActive = btn === navBtn;
-                        btn.classList.toggle('active', isActive);
-                        btn.setAttribute('aria-selected', String(isActive));
-                    });
-                    sectionContainer.querySelectorAll('.focus-tab-panel').forEach(panel => {
-                        const isTarget = panel.dataset.focusPanel === savedTab;
-                        panel.classList.toggle('active', isTarget);
-                    });
-                }
-            });
-        } catch (e) {}
-    };
-
     const pageSections = document.querySelector('#page-sections');
     const hasInitialHash = Boolean(location.hash && location.hash.length > 1);
 
@@ -73,8 +49,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     .forEach(section => sections.append(document.importNode(section, true)));
             });
             pageSections.replaceWith(sections);
-            
-            applySavedFocusTab();
 
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -96,8 +70,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.error(error);
             document.body.style.opacity = '1';
         }
-    } else {
-        applySavedFocusTab();
     }
 
     if (menuButton && header) {
@@ -266,9 +238,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!tabBtn) return;
 
         const targetTab = tabBtn.dataset.tab;
-        try {
-            sessionStorage.setItem('onx_active_tab', targetTab);
-        } catch(err) {}
 
         const navContainer = tabBtn.closest('.focus-tabs-nav');
         const sectionContainer = tabBtn.closest('#odak, #focus') || document;
