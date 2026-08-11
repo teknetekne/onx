@@ -116,7 +116,7 @@ a:focus-visible, button:focus-visible {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 9999;
   background: transparent;
   border-bottom: none;
 }
@@ -1676,7 +1676,7 @@ main > .section-padding > .team-grid {
     box-shadow: none;
   }
 
-  .logo {
+  .site-header .logo {
     grid-column: 2;
     grid-row: 1;
     justify-self: center;
@@ -2032,7 +2032,7 @@ main > .section-padding > .team-grid {
     border-right: none;
     backdrop-filter: none;
     pointer-events: none;
-    z-index: 100;
+    z-index: 9999;
   }
 
   .site-header .logo {
@@ -2439,12 +2439,29 @@ main > section,
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 1200px;
   width: 100%;
-  padding: 1.5rem calc((100% - min(calc(100% - 4rem), 1200px)) / 2);
+  padding: 1.5rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .simple-header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .simple-header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .simple-header .logo-img {
