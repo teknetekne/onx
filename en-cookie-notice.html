@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css?v=20" />
+    <link rel="stylesheet" href="css/style.css?v=21" />
   </head>
   <body class="legal-layout">
     <div class="site-wrapper">
@@ -22,15 +22,23 @@
         <a href="en.html" class="logo" aria-label="ONx Ventures Home">
           <img src="images/onx.svg" alt="ONx Ventures" class="logo-img" />
         </a>
-        <a href="en.html" class="btn-return">
-          <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
-          <span>Back to Home</span>
-        </a>
+        <nav class="header-legal-nav" aria-label="Legal pages">
+          <a href="en-privacy-policy.html">Privacy Policy</a>
+          <a href="en-data-disclosure.html">Data Disclosure</a>
+          <a href="en-cookie-notice.html" aria-current="page">Cookie Notice</a>
+          <a href="en-application-terms.html">Application Terms</a>
+        </nav>
+        <div class="legal-header-actions">
+          <div class="lang-dropdown" aria-label="Language selection"><button class="lang-dropdown-btn" type="button">EN <i data-lucide="chevron-down"></i></button><div class="lang-dropdown-menu"><a href="cerez-aydinlatma-metni.html" lang="tr">TR</a><a href="en-cookie-notice.html" class="active" aria-current="page">EN</a></div></div>
+          <a href="en.html" class="btn-return" aria-label="Back to Home"><i data-lucide="arrow-left"></i><span>Back to Home</span></a>
+        </div>
       </header>
 
       <main>
         <section class="legal-page section-divider section-padding">
           <div class="section-header"><h1 class="section-title">Cookie Notice</h1></div>
+          
+          
           <div class="legal-content">
             <p class="legal-meta">Last updated: August 11, 2026</p>
             <p>This text has been prepared to provide information about the cookie and similar browser technologies used on the <strong>onx.ventures</strong> website by the data controller Burgan Bank A.Ş., within the scope of Article 10 of the Law on the Protection of Personal Data No. 6698.</p>
@@ -63,8 +71,24 @@
         <div class="footer-brand"><div class="footer-brand-top"><a href="en.html" class="logo"><img src="images/onx.svg" alt="ONx Ventures" class="logo-img" /></a><p class="footer-brand-desc">ONx Ventures is an innovative startup ecosystem that brings investment, collaboration, and internal innovation under the same roof.</p></div></div>
         <div class="footer-nav"><ul class="footer-nav-links"><li><div class="nav-item"><a href="en.html" class="nav-title">About</a></div></li><li><div class="nav-item"><a href="en-fund.html" class="nav-title">ONx Fund</a></div></li><li><div class="nav-item"><a href="en-network.html" class="nav-title">Network</a></div></li><li><div class="nav-item"><a href="en-innova.html" class="nav-title">InnovaClub</a></div></li><li><div class="nav-item"><a href="en-team.html" class="nav-title">Committee &amp; Team</a></div></li></ul></div>
         <div class="footer-contact"><span class="footer-contact-title">Contact</span><ul class="footer-contact-info"><li class="footer-contact-item"><i data-lucide="mail"></i><a href="mailto:girisimcilikekositemi@on.com.tr">girisimcilikekositemi@on.com.tr</a></li><li class="footer-contact-item"><i data-lucide="map-pin"></i><span>Burgan Bank A.Ş. Maslak Mah. Eski Büyükdere Cad. No:13 PK: 34485 Sarıyer / Istanbul Turkey</span></li></ul></div>
-        <div class="footer-building"><a href="https://www.on.com.tr/" target="_blank" rel="noopener noreferrer"><img src="images/on-logo.svg" alt="ON Logo" class="footer-on-logo" /></a><a href="https://www.burgan.com.tr/" target="_blank" rel="noopener noreferrer"><img src="images/burgan-logo-footer.png" alt="Burgan Bank" class="footer-building-img" /></a></div>
-        <div class="footer-bottom"><div class="copyright">&copy; 2026 ONx Ventures. All Rights Reserved.</div><nav class="footer-legal" aria-label="Legal"><a href="en-privacy-policy.html">Privacy Policy</a><a href="en-data-disclosure.html">Data Disclosure</a><a href="en-cookie-notice.html" aria-current="page">Cookie Notice</a><a href="en-application-terms.html">Application Terms</a></nav><a href="#top" class="btn-link" style="color: var(--text-muted); font-size: 0.9rem">Back to Top <i data-lucide="arrow-up" style="width: 14px; height: 14px"></i></a></div>
+        <div class="footer-extras" style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
+          <nav class="footer-legal" style="display: flex; gap: 1.5rem; font-size: 0.95rem;">
+            <a href="en-privacy-policy.html">Privacy Policy</a><a href="en-data-disclosure.html">Data Disclosure</a><a href="en-cookie-notice.html">Cookie Notice</a><a href="en-application-terms.html">Application Terms</a>
+          </nav>
+          <div class="footer-building" style="display: flex; align-items: center; gap: 1.5rem;">
+            <a href="https://www.on.com.tr/" target="_blank" rel="noopener noreferrer">
+            <img src="images/on-logo.svg" alt="ON Logo" class="footer-on-logo" />
+          </a>
+          <a href="https://www.burgan.com.tr/" target="_blank" rel="noopener noreferrer">
+            <img src="images/burgan-logo-footer.png" alt="Burgan Bank" class="footer-building-img" />
+          </a>
+          </div>
+        </div>
+        <div class="footer-bottom" style="grid-column: 1 / -1; width: 100%; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; margin-top: 2rem;">
+          <div class="copyright" style="color: var(--text-muted); font-size: 0.85rem; text-align: center;">
+            &copy; 2026 ONx Ventures. All Rights Reserved.
+          </div>
+        </div>
       </footer>
     </div>
     <script src="https://unpkg.com/lucide@0.330.0"></script>

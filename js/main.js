@@ -87,53 +87,57 @@ document.addEventListener('DOMContentLoaded', async () => {
                 document.body.style.overflow = '';
             });
         });
-
-        // Language Dropdown Mobile Click Support
-        const langDropdowns = document.querySelectorAll('.lang-dropdown');
-        langDropdowns.forEach(dropdown => {
-            const btn = dropdown.querySelector('.lang-dropdown-btn');
-            if (btn) {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    dropdown.classList.toggle('is-active');
-                });
-            }
-
-            const translatedSectionIds = {
-                yaklasim: 'approach', approach: 'yaklasim',
-                odak: 'focus', focus: 'odak',
-                iletisim: 'contact', contact: 'iletisim',
-                top: 'top', fund: 'fund', network: 'network',
-                innova: 'innova', komite: 'komite', ekip: 'ekip'
-            };
-            dropdown.querySelectorAll('.lang-dropdown-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    const validSectionIds = ['top', 'fund', 'yaklasim', 'approach', 'odak', 'focus', 'network', 'innova', 'komite', 'ekip', 'iletisim', 'contact'];
-                    const focusPoint = window.innerHeight * 0.35;
-                    const section = validSectionIds
-                        .map(id => document.getElementById(id))
-                        .filter(Boolean)
-                        .reverse()
-                        .find(sec => {
-                            const bounds = sec.getBoundingClientRect();
-                            return bounds.top <= focusPoint && bounds.bottom > 0;
-                        });
-                    if (!section?.id) return;
-
-                    const sectionId = translatedSectionIds[section.id] ?? section.id;
-                    link.hash = sectionId;
-                });
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            langDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('is-active');
-                }
-            });
-        });
     }
+
+    // Language Dropdown Click Support
+    const langDropdowns = document.querySelectorAll('.lang-dropdown');
+    langDropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.lang-dropdown-btn');
+        if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = dropdown.classList.toggle('is-active');
+                btn.setAttribute('aria-expanded', String(isOpen));
+            });
+        }
+
+        const translatedSectionIds = {
+            yaklasim: 'approach', approach: 'yaklasim',
+            odak: 'focus', focus: 'odak',
+            iletisim: 'contact', contact: 'iletisim',
+            top: 'top', fund: 'fund', network: 'network',
+            innova: 'innova', komite: 'komite', ekip: 'ekip'
+        };
+        dropdown.querySelectorAll('.lang-dropdown-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!pageSections) return;
+                const validSectionIds = ['top', 'fund', 'yaklasim', 'approach', 'odak', 'focus', 'network', 'innova', 'komite', 'ekip', 'iletisim', 'contact'];
+                const focusPoint = window.innerHeight * 0.35;
+                const section = validSectionIds
+                    .map(id => document.getElementById(id))
+                    .filter(Boolean)
+                    .reverse()
+                    .find(sec => {
+                        const bounds = sec.getBoundingClientRect();
+                        return bounds.top <= focusPoint && bounds.bottom > 0;
+                    });
+                if (!section?.id) return;
+
+                const sectionId = translatedSectionIds[section.id] ?? section.id;
+                link.hash = sectionId;
+            });
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        langDropdowns.forEach(dropdown => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('is-active');
+                dropdown.querySelector('.lang-dropdown-btn')?.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
 
     // ScrollSpy & Section Scroll Calculations
     function initScrollSpy() {
