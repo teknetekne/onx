@@ -4,3 +4,8 @@
 *.doc
 google-apps-script/
 google-apps-script.zip
+.playwright-cli/
+add_legal_nav.py
+fix_layout.py
+fix_layout_2.py
+update_footer.py
