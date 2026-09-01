@@ -89,6 +89,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    document.querySelectorAll('[data-email-consent]').forEach(checkbox => {
+        const emailLink = checkbox.closest('.contact-consent')?.querySelector('[data-email-link]');
+        if (!emailLink) return;
+
+        const updateEmailLink = () => {
+            if (checkbox.checked) {
+                emailLink.href = emailLink.dataset.emailLink;
+            } else {
+                emailLink.removeAttribute('href');
+            }
+            emailLink.setAttribute('aria-disabled', String(!checkbox.checked));
+        };
+
+        checkbox.addEventListener('change', updateEmailLink);
+        updateEmailLink();
+    });
+
     // Language Dropdown Click Support
     const langDropdowns = document.querySelectorAll('.lang-dropdown');
     langDropdowns.forEach(dropdown => {

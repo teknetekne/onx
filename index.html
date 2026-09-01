@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css?v=20" />
+    <link rel="stylesheet" href="css/style.css?v=24" />
   </head>
   <body>
 
@@ -101,9 +101,13 @@
             <p class="contact-kicker">Birlikte büyütelim.</p>
             <h3>Girişiminizi ve aradığınız iş birliğini bize anlatın.</h3>
             <p>Finans, teknoloji veya sigortacılık teknolojilerinde yenilikçi bir çözüm geliştiriyorsanız, ekibimizle tanışın.</p>
-            <p class="contact-legal-note">Bu e-posta kanalı üzerinden ileteceğiniz kişisel veriler, veri sorumlusu Burgan Bank A.Ş. tarafından iletişim talebinizin alınması ve değerlendirilmesi amacıyla işlenecektir. Ayrıntılı bilgi için <a href="girisimcilik-programi-kvkk-aydinlatma-metni.html">Girişimcilik Programı KVKK Aydınlatma Metni</a>’ni inceleyin.</p>
-            <div style="margin-top: 2rem;">
-              <a href="mailto:girisimcilikekositemi@on.com.tr" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.75rem;">
+            <p class="contact-legal-note">Bu kanal üzerinden paylaşacağınız kişisel veriler, başvurunuzun değerlendirilmesi amacıyla Burgan Bank A.Ş. tarafından işlenebilir. Ayrıntılar için <a href="girisimcilik-programi-kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a>’ni inceleyin.</p>
+            <div class="contact-consent">
+              <label class="contact-consent-label">
+                <input type="checkbox" data-email-consent />
+                <span><a href="girisimcilik-programi-kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a>’ni okudum ve bilgilendirildim.</span>
+              </label>
+              <a class="btn-primary" data-email-link="mailto:girisimcilikekositemi@on.com.tr" aria-disabled="true">
                 <i data-lucide="mail" aria-hidden="true" style="width: 18px; height: 18px;"></i>
                 Bize E-posta Gönderin
               </a>
@@ -147,9 +151,7 @@
           </ul>
         </div>
         <div class="footer-extras" style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
-          <nav class="footer-legal" style="display: flex; gap: 1.5rem; font-size: 0.95rem;">
-            <a href="gizlilik-politikasi.html">Gizlilik Politikası</a><a href="girisimcilik-programi-kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a><a href="cerez-aydinlatma-metni.html">Çerez Aydınlatma Metni</a><a href="basvuru-ve-degerlendirme-kosullari.html">Başvuru Koşulları</a>
-          </nav>
+          <nav class="footer-legal" aria-label="Kişisel Verilerin Korunması"><span class="footer-legal-title">Kişisel Verilerin Korunması</span><span class="footer-legal-links"><a href="gizlilik-politikasi.html">Gizlilik Politikası</a><a href="girisimcilik-programi-kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a></span></nav>
           <div class="footer-building" style="display: flex; align-items: center; gap: 1.5rem;">
             <a href="https://www.on.com.tr/" target="_blank" rel="noopener noreferrer">
             <img src="images/on-logo.svg" alt="ON Logo" class="footer-on-logo" />
@@ -168,6 +170,6 @@
     </div>
 
     <script src="https://unpkg.com/lucide@0.330.0"></script>
-    <script src="js/main.js?v=2026081102"></script>
+    <script src="js/main.js?v=2026090101"></script>
   </body>
 </html>
