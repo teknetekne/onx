@@ -2507,56 +2507,44 @@ main > .legal-page {
   text-wrap: pretty;
 }
 
-.contact-consent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
+.contact-email {
   margin-top: 1.5rem;
 }
 
-.contact-consent-label {
-  display: flex;
+.contact-email .btn-primary {
+  display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  font-weight: 400;
-  line-height: 1.5;
-  cursor: pointer;
-}
-
-.contact-consent-label input {
-  flex: 0 0 auto;
-  width: 1rem;
-  height: 1rem;
-  margin: 0;
-  accent-color: var(--accent);
-  cursor: pointer;
-}
-
-.contact-consent-label a {
-  color: var(--text-main);
-  font-weight: 500;
-  text-decoration-thickness: from-font;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 0.2em;
-}
-
-.contact-consent .btn-primary {
+  gap: 0.75rem;
   min-height: 2.75rem;
   padding: 0.7rem 1.15rem;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.btn-primary[aria-disabled="true"] {
+.contact-legal-summary {
+  max-width: 62ch;
+  margin-top: 1.25rem;
   color: var(--text-muted);
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  cursor: not-allowed;
-  pointer-events: none;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.contact-legal-summary p {
+  margin: 0;
+}
+
+.contact-legal-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.contact-legal-links a {
+  color: var(--text-main);
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
 }
 
 .footer-legal {
@@ -2833,6 +2821,7 @@ body.legal-layout .legal-page {
     position: absolute;
     top: clamp(6rem, 15vh, 8.5rem);
     left: clamp(1rem, 3.5vw, 3rem);
+    width: calc(var(--legal-content-offset) - clamp(1rem, 3.5vw, 3rem) - 2rem);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2846,6 +2835,8 @@ body.legal-layout .legal-page {
   .header-legal-nav a {
     width: 100%;
     padding: clamp(0.4rem, 1vh, 0.65rem) 1rem clamp(0.4rem, 1vh, 0.65rem) 0;
+    white-space: normal;
+    line-height: 1.4;
     font-size: clamp(0.85rem, min(1.3vw, 2.1vh), 1.05rem);
     letter-spacing: 0;
     transition: color 150ms ease, font-size 150ms ease, padding-left 150ms ease;
