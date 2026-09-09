@@ -1585,15 +1585,20 @@ main > .section-padding > .section-header {
 }
 
 .approach-container .focus-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  display: grid;
+  grid-template-rows: 24px minmax(0, 1fr);
+  align-content: start;
+  row-gap: 0.85rem;
   min-height: 100%;
   padding: 1.5rem 0;
 }
 
-.approach-container .focus-card [data-lucide] {
-  margin-bottom: 0;
+.approach-container .focus-card > [data-lucide],
+.approach-container .focus-card > svg {
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  align-self: center;
   color: var(--text-muted);
 }
 
@@ -1602,6 +1607,7 @@ main > .section-padding > .section-header {
 }
 
 .approach-container .focus-card h4 {
+  line-height: 1.35;
   margin-bottom: 0.35rem;
 }
 
@@ -1610,9 +1616,13 @@ main > .section-padding > .section-header {
 }
 
 .network-card,
+.team-card {
+  gap: 0;
+}
+
+.network-card,
 .team-card,
 .approach-container .focus-card {
-  gap: 0;
   padding: 1.75rem 0;
   background: transparent;
   border: 0;
@@ -2956,26 +2966,12 @@ body.legal-layout .legal-page {
     transform var(--hover-duration) var(--hover-ease);
 }
 
+.approach-container .focus-card,
 .network-card {
   position: relative;
   overflow: hidden;
   transition: background-color var(--hover-duration) var(--hover-ease),
     border-color var(--hover-duration) var(--hover-ease),
-    transform var(--hover-duration) var(--hover-ease);
-}
-
-.network-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 2px;
-  background: var(--accent);
-  opacity: 0;
-  transform: scaleY(0.25);
-  transform-origin: top;
-  transition: opacity var(--hover-duration) var(--hover-ease),
     transform var(--hover-duration) var(--hover-ease);
 }
 
@@ -3053,19 +3049,27 @@ body.legal-layout .legal-page {
     transform: translateY(-2px);
   }
 
-  .focus-tabs-container .focus-card:hover .focus-card-content,
-  .approach-container .focus-card:hover > :not([data-lucide]):not(svg) {
+  .focus-tabs-container .focus-card:hover .focus-card-content {
     transform: translateX(var(--hover-shift));
   }
 
-  .network-card:hover::before {
-    opacity: 1;
-    transform: scaleY(1);
+  .approach-container .focus-card:hover,
+  .network-card:hover {
+    background-color: transparent;
+    border-top-color: var(--card-border-hover);
   }
 
+  .approach-container .focus-card:hover > :not([data-lucide]):not(svg),
   .network-card:hover p {
-    color: var(--text-main);
-    transform: translateX(var(--hover-shift));
+    transform: none;
+  }
+
+  .approach-container .focus-card:hover [data-lucide],
+  .approach-container .focus-card:hover svg,
+  .network-card:hover [data-lucide],
+  .network-card:hover svg {
+    color: var(--accent) !important;
+    transform: translateY(-2px) !important;
   }
 
   .team-card:hover {
@@ -3111,7 +3115,6 @@ body.legal-layout .legal-page {
   .focus-tab-btn,
   .focus-card,
   .network-card,
-  .network-card::before,
   .team-card,
   .team-image-wrapper,
   .team-image-wrapper::after,
