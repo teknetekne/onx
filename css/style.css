@@ -1,5 +1,4 @@
 /* css/style.css */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   --bg-color: #070707; 
@@ -3126,3 +3125,81 @@ body.legal-layout .legal-page {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================================================
+   Error Pages (Clean & Centered)
+   ========================================================================== */
+.error-page-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  background-color: var(--bg-color, #070707);
+  color: var(--text-main, #EAEAEA);
+  font-family: var(--font-body, 'Outfit', sans-serif);
+}
+
+.error-page-wrap {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.error-page-logo {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.error-page-logo img {
+  height: 26px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.error-page-code {
+  font-size: clamp(4.5rem, 12vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin: 0 0 1rem 0;
+  user-select: none;
+}
+
+.error-page-title {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.25;
+}
+
+.error-page-desc {
+  font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--text-muted, #8e8e8e);
+  margin: 0 auto 2.25rem auto;
+  max-width: 420px;
+}
+
+.error-page-link {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  transition: opacity 0.2s ease;
+}
+
+.error-page-link:hover {
+  opacity: 0.7;
+}
+
+
+

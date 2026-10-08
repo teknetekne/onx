@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /404.html
+Disallow: /50x.html
+Disallow: /500.html
+Disallow: /en/404.html
+Disallow: /en/50x.html
+Disallow: /en/500.html
 
 Sitemap: https://onx.ventures/sitemap.xml
+
